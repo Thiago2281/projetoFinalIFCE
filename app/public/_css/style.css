@@ -1,0 +1,369 @@
+:root {
+  --preto: #000000;
+  --cinzaclaro: #ebebeb;
+  --azulescuro: #070d23;
+}
+
+header {
+  background-color: var(--preto);
+}
+
+a:link {
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+a:visited {
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+a:hover {
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+a:active {
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+li {
+  float: right;
+  margin-top: 10px;
+}
+
+li ul {
+  display: none;
+}
+
+li:hover ul {
+  display: block;
+  position: absolute;
+  background-color: black;
+  margin-left: -80px;
+  width: 90px;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+/* unvisited link */
+a.titulo:link {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+/* visited link */
+a.titulo:visited {
+  color: rgb(255, 255, 255);
+}
+
+/* mouse over link */
+a.titulo:hover {
+  color: rgb(105, 255, 230);
+}
+
+/* selected link */
+a.titulo:active {
+  color: rgb(255, 255, 255);
+}
+
+.button {
+  background-color: transparent;
+  border: 2px solid #e7e7e7;
+  color: white;
+  padding: 10px 45px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-family: "Roboto slab";
+  font-size: 20px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+}
+
+.button2 {
+  background-color: black;
+  font-size: 14px;
+  padding: 10px 30px;
+}
+
+h1 {
+  margin-top: 0px;
+  margin-bottom: 0px
+}
+
+h2 {
+  margin-top: 0px;
+  margin-bottom: 0px
+}
+
+#citacoes {
+  font-family: "Roboto slab", sans-serif;
+  font-size: 20px;
+}
+
+#formulario {
+  font-family: "Roboto slab";
+  font-size: 15px;
+  text-transform: uppercase;
+  padding-top: 5%;
+}
+
+#formulario_center {
+  font-family: "Roboto slab";
+  font-size: 15px;
+  padding-top: 10%;
+  padding-right: 35%;
+  padding-left: 35%;
+}
+
+#menu_celular {
+  display: none;
+}
+
+#abertura {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url('/_img/jovem_rondon.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: white;
+  text-align: center;
+}
+
+#titulo_principal {
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  padding-top: 20%
+}
+
+#subtitulo_principal {
+  font-family: "Lora", serif;
+  font-size: 30px;
+  padding: 10px;
+}
+
+#fundo_azul {
+  background-color: var(--azulescuro);
+  color: white;
+  padding: 1vw 10vw 10vw 10vw;
+}
+
+#titulo_destaque {
+  font-family: "Montserrat", sans-serif;
+  font-size: 5vw;
+  letter-spacing: -1px;
+  font-weight: lighter;
+}
+
+#texto_destaque {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5vw;
+  font-weight: lighter;
+}
+
+#destaques {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+}
+
+#texto_noticia {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+#destaque_especial {
+  font-family: "Bebas Neue";
+  font-size: 60px;
+  margin-top: 20px;
+}
+
+#destaque_especial1 {
+  font-family: "Bebas Neue";
+  font-size: 30px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#rodape {
+  background-color: var(--cinzaclaro);
+  color: rgb(0, 0, 0);
+  padding-top: 20px;
+}
+
+#footer {
+  background-color: var(--cinzaclaro);
+  position: absolute;
+  bottom: 0;
+}
+
+.grid-coluna {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2%;
+  padding-top: 2vw;
+}
+
+.item {
+  max-width: 300px;
+  justify-content: center;
+
+}
+
+.grid-template-columns-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 8vw;
+  gap: 10vw;
+}
+
+.grid-template-columns-1>article {
+  max-width: 50%;
+}
+
+.grid-template-columns-1>div {
+  max-width: 50%;
+}
+
+@media (max-width: 800px) {
+  .grid-template-columns-1 {
+    flex-direction: column;
+  }
+
+  .grid-template-columns-1>div {
+    max-width: 90%;
+  }
+
+  .grid-template-columns-1>article {
+    max-width: 100%;
+  }
+
+  .grid-template-columns-3 {
+    flex-direction: column;
+  }
+  #abertura {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url('Imagens/jovem\ rondon.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    color: white;
+    text-align: center;
+  }
+}
+
+.grid-template-columns-2 {
+  grid-template-columns: 50% 50%;
+  text-align: justify;
+  padding: 10px 200px 100px 200px;
+  gap: 40px
+}
+
+.grid-template-columns-3 {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 2vw;
+  padding: 5px;
+}
+
+.center {
+  text-align: center;
+}
+
+.justificado {
+  text-align: justify;
+}
+
+
+.item10 {
+  grid-area: item10;
+}
+
+.item20 {
+  grid-area: item20;
+  text-align: right;
+}
+
+.item30 {
+  grid-area: item30;
+  text-align: right;
+}
+
+.item40 {
+  grid-area: item40;
+  text-align: center;
+}
+
+.grid-container1 {
+  display: grid;
+  grid-template-areas:
+    'item10 item10 item10'
+    'item20 item30 item40';
+  padding: 0px 2vw 1vw 2vw;
+}
+
+.coluna_rodape {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 4vw;
+}
+
+@media (max-width: 600px) {
+  .grid-container1 {
+    display: grid;
+    grid-template-areas:
+      'item10 item10'
+      'item20 item20'
+      'item30 item30'
+      'item40 item40';
+    gap: 1px;
+    padding: 0px 2vw 1vw 2vw;
+  }
+
+  ul li {
+    display: none;
+  }
+
+  #menu_celular {
+    display: inline;
+  }
+}
+
+input {
+  width: 50%;
+}
+
+.citacao {
+  padding-bottom: 2vw;
+  justify-content: left;
+
+}

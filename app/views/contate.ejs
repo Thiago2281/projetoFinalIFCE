@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> Rondon </title>
+        <link rel="stylesheet" href="/_css/style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tenor">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Slab">
+    </head>
+<body>
+    <header>
+    <%- include('/home/node/app/views/cabecalho.ejs') %> 
+    </header>
+
+    <section style="margin-left: 10%; margin-right: 10%;">
+        <br><h1 id="destaque_especial"> O desenvolvedor</h1>
+        <p id="texto_destaque"> Militar do Serviço de Intendência, formado na Academia Militar das Agulhas Negras, também sou aluno do curso técnico de informática para internet do Instituto Federal do Ceará, Campus Paracuru</p>
+        <p id="texto_destaque"> Entusiasta dos feitos do Marechal Rondon como positivista, militar, explorador e indigenista</p>
+    </section>
+    <section class="grid-container1" id="rodape">
+        <p1 id="destaque_especial1" class="item10">ENTRE EM CONTATO PARA CONTRIBUIÇÕES</p1>
+        <form id="formulario" class="item20">
+            <label for="nome">Nome:</label> <input type="text" id="nome" name="nome"><br><br>
+            <label for="snome">Sobrenome:</label> <input type="text" id="snome" name="snome"><br>
+        </form>
+        <form id="formulario" class="item30">
+            <label for="email">E-mail:</label> <input type="email" id="email" name="email"><br><br>
+            <label for="mensagem">Mensagem:</label> <textarea name="messagem" rows="3"
+                cols="30">Escreva aqui sua mensagem</textarea>
+        </form>
+        <form id="formulario" class="item40">
+            <br><br><br><a href="login"
+                class="button button2">Enviar</a>
+        </form>
+    </section>
+    <footer>
+        <p id="texto_noticia"> Desenvolvido por </p1><a href="contate">Thiago</a>
+    </footer>
+</body>
+</html>

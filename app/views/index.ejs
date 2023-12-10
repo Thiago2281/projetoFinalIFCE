@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> Rondon </title>
+        <link rel="stylesheet" href="/_css/style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tenor">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Slab">
+    </head>
+<body>
+    <header>
+    
+    <%- include('/home/node/app/views/cabecalho.ejs') %>
+    </header>
+    <section id="abertura">
+        <h1 id="titulo_principal">Cândido Mariano da Silva Rondon</h1>
+        <h2 id="subtitulo_principal">Tributo a um herói nacional</h2>
+        <a href="#fundo_azul" class="button button1">Saiba mais</a>
+    </section>
+    <section id="fundo_azul" class="grid-template-columns-1" style="padding-top: 5vw;">
+        <div>
+            <img src="/_img/rondon_expedicao.png" alt="rondon expedicao" width="70%">
+        </div>
+        <div>
+            <h1 id="titulo_destaque">Quem foi</h1><br>
+            <h2 id="texto_destaque">Marechal Rondon (1865-1958) foi militar e sertanista brasileiro. Foi o idealizador
+                do Parque Nacional do Xingu e Diretor do Serviço de Proteção ao Índio. Integrou a Comissão Construtora
+                de Linhas Telegráficas,
+                atravessou o sertão desconhecido, na maior parte, habitado por índios bororos, terenas e guaicurus.
+                Abriu estradas, expandiu o telégrafo e ajudou a demarcar as terras indígenas.</h2>
+        </div>
+    </section>
+    <section id="fundo_azul">
+        <h1 id="titulo_destaque" class="center">Uma vida grandiosa</h1>
+        <h2 id="texto_destaque" class="center">Merecedor de um lugar no Livro dos Heróis da Pátria, guardado no Panteão
+            da Pátria, em Brasília-DF, Rondon teve uma vida digna dos maiores personagens da humanidade. </h2>
+        <div class="grid-coluna">
+            <article class="item">
+                <a class="titulo" href="./carreira">
+                    <img src="/_img/rondon_militar.png" alt="rondon militar" width="70%"><br>
+                    O MILITAR POSITIVISTA<br>
+                    <p1 id="texto_noticia">Patrono da Arma de Comunicações, galgou todos os postos da carreira militar
+                        até ser nomeado Marechal do Exército</p1>
+                </a>
+            </article>
+            <article class="item">
+                <a class="titulo" href="./carreira">
+                    <img src="/_img/explorador.png" alt="rondon explorador" width="70%"><br>
+                    O EXPLORADOR<br>
+                    <p1 id="texto_noticia">Um dos maiores exploradores da história mundial, tendo fundado povoados,
+                        estradas e pontes em áreas remotas
+                    </p1>
+                </a>
+            </article>
+            <article class="item">
+                <a class="titulo" href="./carreira">
+                    <img src="/_img/indigenista.png" alt="rondon indigenista" width="70%"><br>
+                    O INDIGENISTA<br>
+                    <p1 id="texto_noticia">Ficou marcado por atuar na defesa dos direitos indígenas e esteve à frente da
+                        criação de importantes instituições</p1>
+                </a>
+            </article>
+        </div>
+    </section>
+    <section class="grid-template-columns-1" style="padding-top: 60px;">
+        <h3 id="destaque_especial">IMPRESSÕES FAMOSAS</h3>
+        <div id="citacoes">
+<%
+for (let frase of frases) {
+%>
+            <article class="citacao">
+                <p1><%= frase.texto.slice(0,55) %></p1>
+                <p1><%= frase.texto.slice(56,110) %></p1><br>
+                <p1>- <%= frase.autor %></p1>
+            </article>
+<%
+}
+%>
+        </div>
+        <button onclick="passarPagina()">Proxima</button>
+        <script>
+            let pagina = 0;
+            async function passarPagina() {
+                let resposta = await fetch('pagina/' + pagina++);
+                let proximaPagina = await resposta.text();
+                let divCitacoes = document.querySelector('#citacoes');  
+                divCitacoes.innerHTML=proximaPagina;
+            }
+        </script>
+
+
+    </section>
+    <section class="grid-container1" id="rodape">
+        <p1 id="destaque_especial1" class="item10">ENTRE EM CONTATO PARA CONTRIBUIÇÕES</p1>
+        <form id="formulario" class="item20">
+            <label for="nome"> Nome:</label> <input type="text" id="nome" name="nome"><br><br>
+            <label for="snome">Sobrenome:</label> <input type="text" id="snome" name="snome"><br>
+        </form>
+        <form id="formulario" class="item30">
+            <label for="email">E-mail:</label> <input type="email" id="email" name="email"><br><br>
+            <label for="mensagem">Mensagem:</label> <textarea name="messagem" rows="3"
+                cols="30">Escreva aqui sua mensagem</textarea>
+        </form>
+        <form id="formulario" class="item40">
+            <a href="login" class="button button2">Enviar</a>
+        </form>
+    </section>
+    <footer>
+        <p id="texto_noticia"> Desenvolvido por </p1><a href="autor">Thiago</a>
+    </footer>
+</body>
+
+</html>

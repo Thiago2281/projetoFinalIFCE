@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> Rondon </title>
+        <link rel="stylesheet" href="/_css/style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tenor">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Slab">
+        <script src="/_js/frases.js"></script>
+        <style>
+            .padrao {
+                color: green;
+            }
+            .npadrao {
+                color: red;
+            }
+        </style>
+    
+    </head>
+<body>
+    <header>
+    <%- include('/home/node/app/views/cabecalho.ejs') %> 
+    </header>
+
+
+    <section id="resposta">
+        <form method="post" accept-charset="utf-8" enctype="text/plain" onSubmit="event.preventDefault(); escolher();" id="formulario" ;>
+            <br><br>
+            <h2>Impressões famosas</h2><br>
+            <input name="id" type="hidden" value="0">
+            <label for="data">Data</label><br>
+            <input type="date" id="data" name="data"><br>
+            <label for="autor">Autor</label><br>
+            <input type="text" id="autor" name="autor"><br>
+            <label for="Frase">Frase</label><br>
+            <input type="text" id="frase" name="texto"><br><br>
+            <button type="submit" class="button button2">Enviar</button>
+        </form>
+    </section>
+    <button onclick="listar();">Listar</button>
+    <button><a href="cadastro">Cadastro de usuarios</a></button>
+    <section id="texto_noticia">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Data</th>
+                    <th>Frase</th>
+                    <th>Autor</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="frases">
+                
+            </tbody>
+        </table>
+    </section>
+
+</body>
+
+</html>

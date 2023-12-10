@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> Rondon </title>
+        <link rel="stylesheet" href="/_css/style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tenor">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Slab">
+        <script src="/_js/usuarios.js"></script>
+    </head>
+<body>
+    <header>
+    <%- include('/home/node/app/views/cabecalho.ejs') %> 
+    </header>
+
+    <section id="resposta">
+        <form method="post" onSubmit="event.preventDefault(); escolher();" id="formulario" ;>
+            <h2>Cadastro</h2><br>
+            <input name="id" type="hidden" value="0">
+            <label for="nome">Nome</label><br>
+            <input type="text" id="nome" name="nome"><br>
+            <label for="senha">Senha</label><br>
+            <input type="password" id="senha" name="senha"><br>
+            <label for="text">Papel (digite 1 para Admin ou 2 para Geral)</label><br>
+            <input type="text" id="papel" name="papel"><br><br>
+            <input type="submit" value="Cadastrar" class="button button2">
+        </form>
+    </section>
+    <button onclick="listar();">Listar</button>
+    <section id="texto_noticia">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Senha</th>
+                    <th>Papel</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="usuarios">
+                
+            </tbody>
+        </table>
+    </section>
+    <footer id="footer">
+        <p id="texto_noticia"> Desenvolvido por </p1><a href="contate">Thiago</a>
+    </footer>
+</body>
+
+</html>

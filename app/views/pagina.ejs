@@ -1,0 +1,12 @@
+<%= pagina %>
+<%
+for (let frase of frases) {
+%>
+<article class="citacao">
+    <p1><%= frase.texto.slice(0,55) %></p1>
+    <p1><%= frase.texto.slice(56,110) %></p1><br>
+    <p1>- <%= frase.autor %></p1>
+</article>
+<%
+}
+%>

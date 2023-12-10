@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> Rondon </title>
+        <link rel="stylesheet" href="/_css/style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tenor">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Slab">
+    </head>
+<body>
+    <header>
+    <%- include('/home/node/app/views/cabecalho.ejs') %> 
+    </header>
+    <form id="formulario_center" onSubmit="event.preventDefault(); login();">
+        <h1>Login</h1>
+        <div id="resposta"></div>
+        <label>
+            <span>Nome</span>
+            <input name="nome"><br>
+        </label>
+        <label>
+            <span>Senha</span>
+            <input name="senha" type="password">
+        </label><br>
+        <button>Ok</button>
+    </form>
+</body>
+<script>
+    async function login() {
+        let nome = document.querySelector('[name=nome]').value;
+        let senha = document.querySelector('[name=senha]').value;
+        let divResposta = document.querySelector('#resposta');
+        
+        let dados = new URLSearchParams({nome, senha});
+        let resposta = await fetch('logar', {
+            method: 'post',
+            body: dados
+        });
+        let json = await resposta.json();
+        console.log(json);
+        if (resposta.status == 200) {
+            sessionStorage.setItem('token', json.token);
+            window.location = '/admin';
+        }
+        else {
+            divResposta.innerText = json.mensagem;
+        }
+
+    }
+</script>
+</html>

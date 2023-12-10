@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/_css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tenor">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Slab">
+</head>
+<body>
+    <%- include('/home/node/app/views/cabecalho.ejs') %>
+    <section style="margin-left: 10%;">
+        <br>
+        <h1>O site</h1>
+        <p id="texto_destaque" style="margin-right: 10%;"> Este site foi desenvolvido como uma atividade do curso técnico de informática para
+            internet do Instituto Federal do Ceará, Campus Paracuru</p>
+        <br><h1>O autor</h1>
+        <p id="texto_destaque"><%= nome %></p>
+    </section>
+    <section style="margin-left: 10%;">
+        <h1>Formações</h1>
+        <ul>
+<%
+for (let formacao of formacoes) {
+%>
+        <p id="texto_destaque"><%= formacao %></p>
+<%
+}
+%>
+        </ul>
+    </section>
+</body>
+</html>
